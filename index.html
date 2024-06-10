@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherEase</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <header>
+        <nav class="flex">
+          <a href="" class="logo">
+            <img src="./logo.png" alt="" />
+          </a>
+          <div class="search flex">
+            <i class="ri-map-pin-line"></i>
+            <input type="text" placeholder="Search city" />
+            <i class="ri-search-line btn"></i>
+          </div>
+          <div class="mode flex">
+            <i class="ri-moon-line"></i>
+          </div>
+        </nav>
+      </header>
+      <h1 class="error">The city you are searching is not a city.</h1>
+      <div class="card">
+        <div class="weather-img">
+          <img id="weather-img" src="./images/clear.png" alt="" />
+        </div>
+        <h1 class="temp">38 °C</h1>
+        <h2 class="city">New Delhi</h2>
+        <div class="date">
+          <img src="./date.png" width="100" alt="" />
+          <h3 class="time">10:45</h3>
+          <h3 class="dat"></h3>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
