@@ -4,6 +4,59 @@
   box-sizing: border-box;
 }
 
+body {
+  --text-color: #333;
+  --bkg-color: rgba(255, 238, 234, 0.5);
+  --bkgd-color: rgba(255, 238, 234, 0.6);
+  --bg-img: url("./light.webp");
+  --sun: block;
+  --moon: none;
+  --op5: 0.5;
+  --op6: 0.6;
+}
+body.dark-theme {
+  --text-color: #fff;
+  --bkg-color: none;
+  --bkgd-color: rgba(11, 11, 8, 0.6);
+  --bg-img: url("./dark.webp");
+  --sun: none;
+  --moon: block;
+  --op5: 0.5;
+  --op6: 0.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --text-color: #eee;
+    --bkg-color: none;
+    --bkgd-color: rgba(11, 11, 8, 0.5);
+    --bg-img: url("./dark.webp");
+    --sun: none;
+    --moon: block;
+    --op5: 0.5;
+    --op6: 0.6;
+  }
+  body.light-theme {
+    --text-color: #333;
+    --bkg-color: rgba(255, 238, 234, 0.5);
+    --bkgd-color: rgba(255, 238, 234, 0.6);
+    --bg-img: url("./light.webp");
+    --sun: block;
+    --moon: none;
+    --op5: 0.5;
+    --op6: 0.6;
+  }
+}
+
+.ri-sun-line {
+  display: var(--sun);
+}
+
+.ri-moon-line {
+  display: var(--moon);
+}
+
 .flex {
   display: flex;
   justify-content: center;
@@ -11,15 +64,16 @@
 }
 
 #main {
-  background-image: url("./light.webp");
+  background-image: var(--bg-img);
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--text-color);
 }
 
 header {
-  background-color: rgba(255, 238, 234, 0.5);
+  background-color: var(--bkg-color);
 }
 
 nav {
@@ -39,7 +93,7 @@ nav {
   margin: 0 150px;
   margin-left: 100px;
   width: 100%;
-  background-color: rgba(255, 238, 234, 0.6);
+  background-color: var(--bkgd-color);
   /* border: 1px solid #333; */
   /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
   padding: 5px 15px;
@@ -55,6 +109,7 @@ header > .search {
   margin: 0 10px;
   padding: 8px 0;
   outline: none;
+  color: var(--text-color);
   border: none;
   width: 100%;
   font-size: large;
@@ -67,14 +122,16 @@ header > .search {
 
 i {
   font-size: 24px;
-  color: #333;
+  color: var(--text-color);
+  /* color: #333; */
 }
 
 .mode {
   border-radius: 50px;
   width: 46.8px !important;
   height: 46.8px;
-  background-color: rgba(255, 238, 234, 0.6);
+  background-color: var(--bkgd-color);
+  cursor: pointer;
 }
 
 .mode i {
@@ -84,10 +141,10 @@ i {
 .card {
   margin: auto;
   margin-top: 50px;
-  color: #333;
+  color: var(--text-color);
   max-width: 360px;
   text-align: center;
-  background-color: rgba(255, 238, 234, 0.5);
+  background-color: var(--bkgd-color);
   border-radius: 15px;
   padding: 30px;
 }
